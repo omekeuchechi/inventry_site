@@ -39,6 +39,19 @@
                             </div>
                         </div>
 
+                        <!-- Role Selection Dropdown -->
+                        <div class="row mb-3">
+                            <label for="role" class="col-md-4 col-form-label text-md-end">{{ __('Login As') }}</label>
+
+                            <div class="col-md-6">
+                                <select id="role" class="form-control" name="role" required>
+                                    <option value="cashier">Cashier</option>
+                                    <option value="manager">Manager</option>
+                                    <option value="admin">Admin</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="row mb-3">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
