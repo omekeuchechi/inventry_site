@@ -22,9 +22,13 @@ class LoginController extends Controller
             return '/admin-dashboard';
         } elseif ($user->role === 'manager') {
             return '/manager-dashboard';
-        } 
-        // Default dashboard (cashier)
-        return '/cashier-dashboard';
+        } elseif ($user->role === 'cashier') {
+            // Default dashboard (cashier)
+            return '/cashier-dashboard';
+        } elseif ($user->role === 'employee') {
+            return '/';
+        }
+        return '/';
     }
 
     /**

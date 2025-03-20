@@ -6,7 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ProductController;
-
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CategoryController;
 
 /*
