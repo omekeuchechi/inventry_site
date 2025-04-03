@@ -45,6 +45,7 @@
 
                             <div class="col-md-6">
                                 <select id="role" class="form-control" name="role" required>
+                                    <option value="employee">Employee</option>
                                     <option value="cashier">Cashier</option>
                                     <option value="manager">Manager</option>
                                     <option value="admin">Admin</option>

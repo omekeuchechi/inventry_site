@@ -20,17 +20,17 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// please take note this is the controller u should be putting all the page that do not need auth
+Route::get('/', [App\Http\Controllers\PagesController::class, 'index'])->name('/');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/cashier-dashboard', [App\Http\Controllers\HomeController::class, 'cashier'])->name('cashier-dashboard')->middleware('role:cashier');
+Route::get('/job-portal', [App\Http\Controllers\HomeController::class, 'employee'])->name('job-portal')->middleware('role:employee');
 
-Route::get('/admin', [AdminController::class, 'index'])->middleware('role:admin');
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->middleware('role:admin');
     Route::get('/admin-dashboard', [AdminController::class, 'index'])->name('admin.dashboard')->middleware('role:admin');
     Route::get('/manager-dashboard', [ManagerController::class, 'index'])->name('manager.dashboard')->middleware('role:manager');
 });
@@ -39,20 +39,20 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/manage-roles', [RoleController::class, 'index'])->name('admin.manage_roles');
     Route::patch('/admin/update-role/{id}', [RoleController::class, 'updateRole'])->name('admin.updateRole');
+    // Show Edit Profile Form
+    Route::get('/admin/profile', [AdminController::class, 'editProfile'])->name('admin.profile');
+    // Handle Profile Update
+    Route::post('/admin/profile/update', [AdminController::class, 'updateProfile'])->name('admin.profile.update');
+    Route::post('/admin/register', [AdminController::class, 'storeStaff'])->name('admin.storeStaff');
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/register', [AdminController::class, 'showRegisterForm'])->name('admin.register');
 });
 
-Route::post('/admin/register', [AdminController::class, 'storeStaff'])->name('admin.storeStaff');
 
 
-// Show Edit Profile Form
-Route::get('/admin/profile', [AdminController::class, 'editProfile'])->name('admin.profile');
 
-// Handle Profile Update
-Route::post('/admin/profile/update', [AdminController::class, 'updateProfile'])->name('admin.profile.update');
 
 // PRODUCT CREATE
 Route::middleware(['auth'])->group(function () {

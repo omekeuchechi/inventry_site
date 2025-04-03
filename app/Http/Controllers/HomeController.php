@@ -25,4 +25,12 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function cashier()
+    {
+        return view('cashier.dashboard');
+    }
+    public function employee()
+    {
+        return view('job.job-portal');
+    }
 }

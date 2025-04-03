@@ -26,7 +26,7 @@ class LoginController extends Controller
             // Default dashboard (cashier)
             return '/cashier-dashboard';
         } elseif ($user->role === 'employee') {
-            return '/';
+            return '/job-portal';
         }
         return '/';
     }
