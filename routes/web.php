@@ -26,6 +26,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/cashier-dashboard', [App\Http\Controllers\HomeController::class, 'cashier'])->name('cashier-dashboard')->middleware('role:cashier');
+Route::get('/sales_report', [App\Http\Controllers\HomeController::class, 'sales_report'])->name('sales_report')->middleware('role:cashier');
 Route::get('/job-portal', [App\Http\Controllers\HomeController::class, 'employee'])->name('job-portal')->middleware('role:employee');
 
 
