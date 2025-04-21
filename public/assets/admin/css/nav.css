@@ -1,0 +1,12 @@
+.admin-nav{
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    padding: 1rem;
+    margin: 0 250px;    
+    background-color: var(--tertiary-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

@@ -47,8 +47,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/admin/register', [AdminController::class, 'storeStaff'])->name('admin.storeStaff');
 });
 
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/register', [AdminController::class, 'showRegisterForm'])->name('admin.register');
+    Route::get('/admin/setting', [AdminController::class, 'setting'])->name('admin.setting');
 });
 
 

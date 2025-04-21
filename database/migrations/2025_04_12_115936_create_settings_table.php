@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('keywords');
             $table->string('web_color');
             $table->string('logo');
+            $table->string('updateded_by');
             $table->timestamps();
         });
     }

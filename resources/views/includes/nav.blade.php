@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" id="nav-section">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Laravel') }}
@@ -14,23 +14,23 @@
             </ul>
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto home-nav">
                 <!-- Authentication Links -->
                 @guest
                     @if (Route::has('login'))
-                        <li class="nav-item">
+                        <li class="nav-item home-link">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                     @endif
 
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Apply for a Job') }}</a>
+                            <a class="nav-link" id="nav-inv-btn" href="{{ route('register') }}">{{ __('Apply for a Job') }}</a>
                         </li>
                     @endif
                 @else
                     <li class="nav-item">
-                        <a href="{{ url('/home') }}" class="nav-link">Home</a>
+                        <a href="{{ url('/home') }}" class="nav-link" id="nav-inv-btn">Home</a>
                     </li>
                     <li class="nav-item dropdown admin-dash">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

@@ -14,9 +14,10 @@
     <link rel="stylesheet" href="{{ asset('fontawesome-free-6.5.2-web/css/all.css') }}">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <script src="https://js.pusher.com/8.4.0/pusher.min.js"></script>
-
+    
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/app.css'])
+    <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
     @livewireStyles  
     {{-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">  --}}
 </head>
@@ -29,6 +30,7 @@
     </div>
 
     {{-- <script src="https://js.pusher.com/8.4.0/pusher.min.js"></script> --}}
+    <script src="{{ asset('assets/js/main.js') }}"></script>
     @livewireScripts
 </body>
 </html>

@@ -1,7 +1,8 @@
 @extends('layouts.app')  
 
 @section('content')  
-<div class="container mt-4">  
+<div class="container mt-4">
+    @include('includes.cashier-nav')  
     <h2 class="text-center"><i class="fas fa-coins"></i> Sales</h2>
     <h3 class="text-center">Welocome Back {{ Auth::user()->name }}</h3>  
    

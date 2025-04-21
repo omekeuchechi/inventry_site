@@ -1,0 +1,32 @@
+/* nav .home-nav .home-link > #nav-inv-btn{
+    padding: 20px 40px !important;
+    background-color: red !important;
+    color: var(--tertiary-color);
+} */
+
+#cashier-nav{
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+#cashier-nav #cashier-container > ul{
+    gap: 20px;
+}
+#cashier-nav #cashier-container > ul > .pro-img{
+    border-radius: 30px;
+    width: 100%;
+    margin-left: 200px;
+}
+/* bounce */
+#cashier-nav #cashier-container ul li:hover a > .bounce{
+    animation: bounce 0.6s ease-in-out 1;
+    color: blue;
+}
+
+@keyframes bounce {
+    from{
+        transform: translateY(0%);
+    }
+    to{
+        transform: translateY(50%);
+    }
+}

@@ -12,10 +12,13 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/index.css') }}">
     <script src="https://js.pusher.com/8.4.0/pusher.min.js"></script>
-
+    
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/app.css'])
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    @livewireStyles  
 </head>
 <body>
     @include('includes.nav')
@@ -24,5 +27,8 @@
             @yield('content')
         </main>
     </div>
+
+    @livewireScripts
+    <script src="{{ asset('fontawesome-free-6.5.2-web/js/all.js') }}"></script>
 </body>
 </html>

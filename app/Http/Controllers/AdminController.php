@@ -118,4 +118,9 @@ class AdminController extends Controller
     {
         return response()->json(Auth::user()->unreadNotifications);
     }
+
+    public function setting()
+    {
+        return view('admin.setting');
+    }
 }
