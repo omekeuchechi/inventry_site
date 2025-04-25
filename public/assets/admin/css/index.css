@@ -20,6 +20,7 @@ html{
 }
 body{
     background-color: var(--secondary-color) !important;
-    justify-content: center;
+    overflow-x: hidden;
+    /* justify-content: center; */
     
 }

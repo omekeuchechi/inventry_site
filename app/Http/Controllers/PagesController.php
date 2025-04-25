@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Settings;
 
 class PagesController extends Controller
 {
     public function index() 
     {
-        return view('welcome');
+        $settings = Settings::where('id', 1)->first();
+        return view('welcome', [
+            'settings' => $settings,
+        ]);
     }
 }

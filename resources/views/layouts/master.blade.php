@@ -30,5 +30,6 @@
 
     @livewireScripts
     <script src="{{ asset('fontawesome-free-6.5.2-web/js/all.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/main.js') }}"></script>
 </body>
 </html>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Cloudinary\Cloudinary;
 
 
 class AdminController extends Controller
@@ -13,6 +14,12 @@ class AdminController extends Controller
     /**
      * Show the list of users (except the admin).
      */
+    protected $cloudinary;
+    public function __construct()  
+    {  
+        $this->cloudinary = new Cloudinary();  
+    } 
+
     public function index()
     {
         if (Auth::user()->role !== 'admin') {

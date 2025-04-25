@@ -10,3 +10,25 @@
     border-radius: 0.5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+#admin-slider-btn{
+    padding: 1.3rem 2rem;
+    color: var(--tertiary-color);
+    border-radius: 0.5rem;
+    position: absolute;
+    right: 350px;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: var(--font-weight);
+    border: 1px solid var(--primary-color);
+}
+.admin-nav-active{
+    display: none;
+}
+@media (orientation: portrait) {
+    .admin-nav{
+        flex-direction: row;
+        margin: 0 auto;
+        gap: 0.8rem;
+    }
+}

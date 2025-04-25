@@ -1,4 +1,5 @@
-<div class="fluid-container admin-nav">  
+<div class="fluid-container">  
+    <div class="show admin-nav">
     @if(Auth::user()->role === 'admin')  
         <a href="{{ route('products.create') }}" class="btn btn-primary" title="Add New Product">  
             <i class="fa-solid fa-plus"></i>  
@@ -21,5 +22,7 @@
         <a href="{{ route('admin.setting') }}" class="btn btn-primary" title="Settings">  
             <i class="fa-solid fa-cog"></i>  
         </a>  
+    </div>
     @endif  
+        {{-- <i class="fa-solid fas fa-angle-left btn btn-primary" id="admin-slider-btn"></i>   --}}
 </div>  

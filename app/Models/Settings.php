@@ -16,5 +16,7 @@ class Settings extends Model
         'keywords',
         'web_color',
         'logo',
+        'updateded_by',
+        'setbg',
     ];
 }
